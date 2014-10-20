@@ -71,13 +71,34 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WA-7h-V8q">
-                                <rect key="frame" x="86" y="263" width="149" height="41"/>
+                                <rect key="frame" x="57" y="263" width="206" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Lista de Mercado">
+                                <state key="normal" title="Crear Mercado con Lista">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="makeMarketListButton:" destination="rsg-o8-Ryf" eventType="touchUpInside" id="ly8-7U-yuk"/>
                                     <segue destination="LmO-a6-PLd" kind="push" id="efc-ye-a7B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32B-X4-LLI">
+                                <rect key="frame" x="49" y="367" width="222" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Revisar Mercado Anterior">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewMarketListButton:" destination="rsg-o8-Ryf" eventType="touchUpInside" id="N9D-MX-UXf"/>
+                                    <segue destination="LmO-a6-PLd" kind="push" id="Wgj-XG-7iJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-Ld-25t">
+                                <rect key="frame" x="99" y="448" width="122" height="30"/>
+                                <state key="normal" title="Prueba insertNew">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pruebaInsertButton:" destination="rsg-o8-Ryf" eventType="touchUpInside" id="ejB-9A-5Jc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,6 +153,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-584" y="747"/>
+        </scene>
+        <!--Lista de Mercado-->
+        <scene sceneID="Uor-2e-3pJ">
+            <objects>
+                <tableViewController id="QUa-vd-vh5" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qqa-Rc-qgn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="vF2-7u-1W9" detailTextLabel="FwD-AD-2yW" style="IBUITableViewCellStyleSubtitle" id="ajd-hM-QGc">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ajd-hM-QGc" id="lel-nr-daS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vF2-7u-1W9">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FwD-AD-2yW">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QUa-vd-vh5" id="xzW-tX-RnV"/>
+                            <outlet property="delegate" destination="QUa-vd-vh5" id="ANN-PJ-Lgp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Mercado" id="F1x-zW-bDz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGo-WL-YwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="747"/>
         </scene>
         <!--Categorias-->
         <scene sceneID="Ygs-tj-VD0">
@@ -228,7 +290,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UMCell" rowHeight="78" id="xY3-cm-Ow8" customClass="UMTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UMCell" rowHeight="78" id="xY3-cm-Ow8" customClass="UMTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xY3-cm-Ow8" id="FGb-a1-23D">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -257,6 +319,7 @@
                                     <outlet property="cantProductLabel" destination="Nog-zd-ehn" id="kZJ-bE-f1V"/>
                                     <outlet property="dsProductLabel" destination="Anz-KN-mlj" id="55q-MU-D48"/>
                                     <outlet property="subtotalProductLabel" destination="1DL-GG-HZy" id="KwV-hZ-uo9"/>
+                                    <segue destination="HBi-u2-8IA" kind="push" id="3cP-nw-ywC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -268,36 +331,132 @@
                     <navigationItem key="navigationItem" title="Lista de Mercado" id="Rab-oi-fsS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qmM-4n-jcJ">
                             <connections>
-                                <action selector="addProductButton:" destination="hVR-SW-Pd0" id="qoR-fw-O0v"/>
                                 <segue destination="9su-mw-NBg" kind="push" identifier="segueAddProductos" id="8oN-wi-yJh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addProductButton" destination="qmM-4n-jcJ" id="W3l-st-KcO"/>
                         <outlet property="totalMarketLabel" destination="eIy-6L-Jdv" id="Np4-Dz-TwU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mm2-dI-aDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429" y="59"/>
+            <point key="canvasLocation" x="429" y="71"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="DzK-8q-Osp">
+        <!--Comparativo de productos-->
+        <scene sceneID="CZr-Cv-McK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0zi-UF-Kwd" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HAR-QL-PA8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="HBi-u2-8IA" customClass="CompareViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Ha-oE-0kz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ROI-eM-kwk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3gR-EW-fX5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leche condensada la ricura" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLp-ae-6El">
+                                <rect key="frame" x="16" y="72" width="288" height="69"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supermercado la mejor esquina de todas" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ7-J4-l7V">
+                                <rect key="frame" x="16" y="149" width="143" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supermercado la mejor esquina de todas" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DER-1c-uhB">
+                                <rect key="frame" x="16" y="246" width="143" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supermercado la mejor esquina de todas" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alU-xE-po5">
+                                <rect key="frame" x="16" y="346" width="143" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCh-51-y20">
+                                <rect key="frame" x="258" y="175" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76C-oc-roL">
+                                <rect key="frame" x="258" y="317" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHo-QO-QAo">
+                                <rect key="frame" x="258" y="372" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fecha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20b-sv-3WD">
+                                <rect key="frame" x="16" y="217" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItX-Tk-ZZg">
+                                <rect key="frame" x="16" y="317" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8D-xi-doF">
+                                <rect key="frame" x="16" y="417" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2n-Gu-K2m">
+                                <rect key="frame" x="16" y="515" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Supermercado la mejor esquina de todas" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXm-l9-v1d">
+                                <rect key="frame" x="16" y="446" width="143" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzK-Xx-AGl">
+                                <rect key="frame" x="258" y="472" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Comparativo de productos" id="q4L-qm-nh7"/>
                     <connections>
-                        <segue destination="9su-mw-NBg" kind="relationship" relationship="rootViewController" id="qN2-A9-qbt"/>
+                        <outlet property="marketDate1Label" destination="20b-sv-3WD" id="ABT-QP-Nip"/>
+                        <outlet property="marketDate2Label" destination="ItX-Tk-ZZg" id="guN-ec-0zX"/>
+                        <outlet property="marketDate3Label" destination="K8D-xi-doF" id="ZpZ-FC-WL2"/>
+                        <outlet property="marketDate4Label" destination="q2n-Gu-K2m" id="ysv-R7-7wW"/>
+                        <outlet property="marketName1Label" destination="kJ7-J4-l7V" id="TQr-Yv-1ap"/>
+                        <outlet property="marketName2Label" destination="DER-1c-uhB" id="WtB-M3-YGL"/>
+                        <outlet property="marketName3Label" destination="alU-xE-po5" id="q2Z-Sv-f5i"/>
+                        <outlet property="marketName4Label" destination="QXm-l9-v1d" id="ASo-MR-2ZK"/>
+                        <outlet property="titleProductLabel" destination="uLp-ae-6El" id="g36-w6-66c"/>
+                        <outlet property="valueTotal1Label" destination="MCh-51-y20" id="WRj-zl-FtZ"/>
+                        <outlet property="valueTotal2Label" destination="76C-oc-roL" id="3if-D7-gDe"/>
+                        <outlet property="valueTotal3Label" destination="eHo-QO-QAo" id="gcn-7O-WNL"/>
+                        <outlet property="valueTotal4Label" destination="lzK-Xx-AGl" id="pXZ-cy-WRR"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VUw-bI-U2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykn-dt-ifz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429" y="722"/>
+            <point key="canvasLocation" x="429" y="771"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HSq-M4-fh2">
@@ -324,6 +483,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8oN-wi-yJh"/>
+        <segue reference="efc-ye-a7B"/>
     </inferredMetricsTieBreakers>
 </document>

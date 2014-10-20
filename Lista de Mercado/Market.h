@@ -9,19 +9,27 @@
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 #import "repoMarketProduct.h"
+#import "AppDelegate.h"
 
 @interface Market : NSObject
 {
     sqlite3 * conexDB;
     repoMarketProduct * repoProducts;
+    AppDelegate * varAppDelegate;
 }
 
 @property NSMutableArray * arrayNameSuperMarketList;
 @property NSMutableArray * arrayFechaSuperMarketList;
-@property NSMutableArray * arrayProductsOfCategory;
 
+@property NSMutableArray * arrayProductsOfCategory;
+@property NSMutableArray * arrayAllMArketsList;
+
+@property NSMutableArray * arrayCompareProducts;
+
+@property NSMutableArray * arrayIdMarket;
 @property NSMutableArray * arrayDsCategory;
 @property NSMutableArray * arrayProduct;
+@property NSMutableArray * arrayDsProduct;
 @property NSMutableArray * arrayValProduct;
 @property NSMutableArray * arrayCantProduct;
 @property NSMutableArray * arraySubTotal;
@@ -49,9 +57,17 @@
 -(void) addProductAtMarketWhithIdMarket:(int)idMarketVar AndIdProduct:(int)idProductVar AndDsProduct:(NSString *)dsProductVar AndCantProduct:(int)cantProductVar AndValUnitProduct:(int)valUnitProductVar AndSubTotal:(int)subTotalVar;
 -(void) delProductAtMarket:(NSString *) idProduct;
 -(void) updateProductAtMarket:(NSString *) idProduct;
--(void) compareProducts:(NSString *) idProduct;
+
+//Hago la comparación de productos en supermercados(5)
+-(void) compareProducts:(int) idProduct;
 //Crear lista de mercado
 -(void) addListMarket:(NSString *) market;
+
+-(void) takeVarIdMercado;
+//Inserto la nueva lista de mercado
+-(void) insertMarketListNew:(NSString *)marketName;
+//Creo el nuevo mercado
+-(void) createNewMarketListWhithArrayProductsWhithNameMarket:(NSString *)nameMarketVar;
 
 //Sumar los valores de una lista de mercado
 -(void) sumValuesMarketList:(int) idListMarket;

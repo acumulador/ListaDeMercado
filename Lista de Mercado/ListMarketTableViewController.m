@@ -12,6 +12,10 @@
 #import "ProductsTableViewController.h"
 
 @interface ListMarketTableViewController ()
+{
+    int nRow;
+    NSString * pruebaNombreProduct;
+}
 
 @property (nonatomic) BOOL useCustomCells;
 @property (nonatomic, weak) UIRefreshControl *refreshControl;
@@ -24,11 +28,26 @@ NSString * pruebaIdMarket;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    varAppDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     listMarket = [[Market alloc]init];
-    [listMarket loadMarketWithIdListMarket:_dataTransferIdList];
-    [listMarket sumValuesMarketList:_dataTransferIdList];
+    //defino si es una lista nueva
+    if (varAppDelegate.swEditMarketList) {
+        //se toma la lista selccionada como referencia
+        [listMarket createNewMarketListWhithArrayProductsWhithNameMarket:_nameMarketDataTransfer];
+        
+        [listMarket loadMarketWithIdListMarket:varAppDelegate.idNewSuperMercado];
+        
+    } else {
+        [listMarket loadMarketWithIdListMarket:_dataTransferIdList];
+        [listMarket sumValuesMarketList:_dataTransferIdList];
+    }
+    
     _totalMarketLabel.text = [NSString stringWithFormat:@"Total: $ %@",listMarket.totalValuesMarket];
+
+    if (!varAppDelegate.swEditMarketList) {
+        _addProductButton.enabled = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,34 +82,46 @@ NSString * pruebaIdMarket;
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    nRow = indexPath.row;
+    pruebaNombreProduct = [(repoMarketProduct *)[listMarket.arrayProductsOfCategory objectAtIndex:indexPath.row] dsProduct];
+}
+
 - (NSArray *)rightButtons
 {
-    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-    
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.07 green:0.75f blue:0.16f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"check.png"]];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1.0f green:1.0f blue:0.35f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"clock.png"]];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1.0f green:0.231f blue:0.188f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"cross.png"]];
-    
-    return rightUtilityButtons;
+    if (varAppDelegate.swEditMarketList) {
+        NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+        
+        [rightUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:0.07 green:0.75f blue:0.16f alpha:1.0]
+                                                     icon:[UIImage imageNamed:@"comparar.png"]];
+        [rightUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:1.0f green:1.0f blue:0.35f alpha:1.0]
+                                                     icon:[UIImage imageNamed:@"editar"]];
+        [rightUtilityButtons sw_addUtilityButtonWithColor:
+         [UIColor colorWithRed:1.0f green:0.231f blue:0.188f alpha:1.0]
+                                                     icon:[UIImage imageNamed:@"eliminar.png"]];
+        
+        return rightUtilityButtons;
+    }
+    else{
+        return nil;
+    }
 }
 
 -(void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
 {
     switch (index) {
-        case 0:
-            NSLog(@"left button 0 Chulo");
+        case 0:            
+            varAppDelegate.idProductcompare = [(repoMarketProduct *)[listMarket.arrayProductsOfCategory objectAtIndex:nRow] idProduct];
+            
             break;
         case 1:
-            NSLog(@"left button 1 0");
+            NSLog(@"Boton Editar");
             break;
         case 2:
-            NSLog(@"left button X");
+            NSLog(@"Boton Eliminar");
             break;
             
         default:

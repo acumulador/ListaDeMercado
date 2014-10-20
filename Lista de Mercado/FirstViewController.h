@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Market.h"
+#import "AppDelegate.h"
 
 @interface FirstViewController : UIViewController
 {
     Market * iniBD;
+    AppDelegate * varAppDelegate;
 }
+- (IBAction)makeMarketListButton:(id)sender;
+- (IBAction)viewMarketListButton:(id)sender;
+
+
+- (IBAction)pruebaInsertButton:(id)sender;
 
 @end

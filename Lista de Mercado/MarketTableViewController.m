@@ -9,7 +9,9 @@
 #import "MarketTableViewController.h"
 
 @interface MarketTableViewController ()
-
+{
+    int nRow;
+}
 @end
 
 @implementation MarketTableViewController
@@ -35,7 +37,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [allMarkets.arrayNameSuperMarketList count];
+    return [allMarkets.arrayAllMArketsList count];
 }
 
 
@@ -43,9 +45,9 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellMarkets" forIndexPath:indexPath];
     
-    cell.textLabel.text = [allMarkets.arrayNameSuperMarketList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [(repoMarketProduct *)[allMarkets.arrayAllMArketsList objectAtIndex:indexPath.row] nameMarketList];
     
-    cell.detailTextLabel.text = [allMarkets.arrayFechaSuperMarketList objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = [(repoMarketProduct *)[allMarkets.arrayAllMArketsList objectAtIndex:indexPath.row] dateMarketList];
     
     return cell;
 }
@@ -57,8 +59,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ListMarketVC.dataTransferIdList = indexPath.row+1;
-    appDelegate.idSuperMercado = [NSString stringWithFormat:@"%i", indexPath.row+1];
+    nRow = indexPath.row;
+    
+    ListMarketVC.dataTransferIdList = [[(repoMarketProduct *)[allMarkets.arrayAllMArketsList objectAtIndex:nRow] idMarketList] intValue];
+    
+    ListMarketVC.nameMarketDataTransfer = [(repoMarketProduct *)[allMarkets.arrayAllMArketsList objectAtIndex:indexPath.row] nameMarketList];
+    
+    appDelegate.idSuperMercado = [NSString stringWithFormat:@"%i", [[(repoMarketProduct *)[allMarkets.arrayAllMArketsList objectAtIndex:nRow] idMarketList] intValue]];
 }
 
 /*

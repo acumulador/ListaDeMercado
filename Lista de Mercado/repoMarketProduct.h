@@ -17,6 +17,10 @@
 @property NSString * valUnitProduct;
 @property NSString * subTotal;
 
+@property NSString * idMarketList;
+@property NSString * nameMarketList;
+@property NSString * dateMarketList;
+
 @property int idMarketSelected;
 
 @end

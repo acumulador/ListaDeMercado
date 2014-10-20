@@ -11,6 +11,11 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property NSString * idSuperMercado;
+@property int idNewSuperMercado;
+
+@property NSString * idProductcompare;
+
+@property BOOL swEditMarketList;
 
 @property (strong, nonatomic) UIWindow *window;
 

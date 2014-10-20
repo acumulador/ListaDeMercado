@@ -10,19 +10,23 @@
 #import "Market.h"
 #import "SWTableViewCell.h"
 #import "UMTableViewCell.h"
+#import "AppDelegate.h"
 
 @interface ListMarketTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource, SWTableViewCellDelegate>
 {
     Market * listMarket;
+    AppDelegate * varAppDelegate;    
 }
 
 @property int dataTransferIdList;
+@property NSString * nameMarketDataTransfer;
 
 @property (strong, nonatomic) IBOutlet UILabel *totalMarketLabel;
 @property (strong, nonatomic) IBOutlet UILabel *productDsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cantProductoLabel;
 @property (strong, nonatomic) IBOutlet UILabel *subTotalProductLabel;
-- (IBAction)addProductButton:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addProductButton;
 
 
 @end

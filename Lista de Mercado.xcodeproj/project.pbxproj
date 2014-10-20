@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		755CC0DB19EB41C000CEEF69 /* Market.m in Sources */ = {isa = PBXBuildFile; fileRef = 755CC0DA19EB41C000CEEF69 /* Market.m */; };
 		755CC0DD19EB4D0700CEEF69 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 755CC0DC19EB4D0700CEEF69 /* libsqlite3.dylib */; };
-		758D2ED019EF376900F42C8E /* MarketList.db in Resources */ = {isa = PBXBuildFile; fileRef = 758D2ECF19EF376900F42C8E /* MarketList.db */; };
 		758D2ED319EF393000F42C8E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758D2ED219EF393000F42C8E /* FirstViewController.m */; };
+		758EDEC419F47EFD009627D3 /* comparar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 758EDEC119F47EFD009627D3 /* comparar@2x.png */; };
+		758EDEC519F47EFD009627D3 /* editar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 758EDEC219F47EFD009627D3 /* editar@2x.png */; };
+		758EDEC619F47EFD009627D3 /* eliminar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 758EDEC319F47EFD009627D3 /* eliminar@2x.png */; };
+		758EDECC19F4D149009627D3 /* CompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758EDECB19F4D149009627D3 /* CompareViewController.m */; };
 		7590035419ECB6F60043A2F1 /* MarketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7590035319ECB6F60043A2F1 /* MarketTableViewController.m */; };
 		759E956C19F2BFB000C74731 /* repoMarketProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 759E956B19F2BFB000C74731 /* repoMarketProduct.m */; };
 		75A1571D19ED9E8E00828701 /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A1571219ED9E8E00828701 /* NSMutableArray+SWUtilityButtons.m */; };
@@ -24,9 +27,6 @@
 		75A1572919EDB1CC00828701 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A1572819EDB1CC00828701 /* CoreGraphics.framework */; };
 		75A1572B19EDB1E600828701 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A1572A19EDB1E600828701 /* Foundation.framework */; };
 		75A1572D19EDB2C000828701 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A1572C19EDB2C000828701 /* QuartzCore.framework */; };
-		75A1573119EDC37E00828701 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A1572E19EDC37E00828701 /* check@2x.png */; };
-		75A1573219EDC37E00828701 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A1572F19EDC37E00828701 /* clock@2x.png */; };
-		75A1573319EDC37E00828701 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75A1573019EDC37E00828701 /* cross@2x.png */; };
 		75A2EE6819E8BF82004DB5F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A2EE6719E8BF82004DB5F3 /* main.m */; };
 		75A2EE6B19E8BF82004DB5F3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A2EE6A19E8BF82004DB5F3 /* AppDelegate.m */; };
 		75A2EE6E19E8BF82004DB5F3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A2EE6D19E8BF82004DB5F3 /* ViewController.m */; };
@@ -53,9 +53,14 @@
 		755CC0D919EB41C000CEEF69 /* Market.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Market.h; sourceTree = "<group>"; };
 		755CC0DA19EB41C000CEEF69 /* Market.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Market.m; sourceTree = "<group>"; };
 		755CC0DC19EB4D0700CEEF69 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		758D2ECF19EF376900F42C8E /* MarketList.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MarketList.db; sourceTree = "<group>"; };
 		758D2ED119EF393000F42C8E /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		758D2ED219EF393000F42C8E /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		758EDEC119F47EFD009627D3 /* comparar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comparar@2x.png"; sourceTree = "<group>"; };
+		758EDEC219F47EFD009627D3 /* editar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editar@2x.png"; sourceTree = "<group>"; };
+		758EDEC319F47EFD009627D3 /* eliminar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eliminar@2x.png"; sourceTree = "<group>"; };
+		758EDEC919F484DA009627D3 /* MarketList.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MarketList.db; sourceTree = "<group>"; };
+		758EDECA19F4D149009627D3 /* CompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareViewController.h; sourceTree = "<group>"; };
+		758EDECB19F4D149009627D3 /* CompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareViewController.m; sourceTree = "<group>"; };
 		7590035219ECB6F60043A2F1 /* MarketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketTableViewController.h; sourceTree = "<group>"; };
 		7590035319ECB6F60043A2F1 /* MarketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketTableViewController.m; sourceTree = "<group>"; };
 		759E956A19F2BFB000C74731 /* repoMarketProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = repoMarketProduct.h; sourceTree = "<group>"; };
@@ -78,9 +83,6 @@
 		75A1572819EDB1CC00828701 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		75A1572A19EDB1E600828701 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75A1572C19EDB2C000828701 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		75A1572E19EDC37E00828701 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
-		75A1572F19EDC37E00828701 /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
-		75A1573019EDC37E00828701 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
 		75A2EE6219E8BF81004DB5F3 /* Lista de Mercado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lista de Mercado.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A2EE6619E8BF82004DB5F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75A2EE6719E8BF82004DB5F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,9 +162,9 @@
 		75A1573419EDC38400828701 /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				75A1572E19EDC37E00828701 /* check@2x.png */,
-				75A1572F19EDC37E00828701 /* clock@2x.png */,
-				75A1573019EDC37E00828701 /* cross@2x.png */,
+				758EDEC119F47EFD009627D3 /* comparar@2x.png */,
+				758EDEC219F47EFD009627D3 /* editar@2x.png */,
+				758EDEC319F47EFD009627D3 /* eliminar@2x.png */,
 			);
 			name = resource;
 			sourceTree = "<group>";
@@ -193,7 +195,7 @@
 		75A2EE6419E8BF81004DB5F3 /* Lista de Mercado */ = {
 			isa = PBXGroup;
 			children = (
-				758D2ECF19EF376900F42C8E /* MarketList.db */,
+				758EDEC919F484DA009627D3 /* MarketList.db */,
 				75A1573419EDC38400828701 /* resource */,
 				75A1571019ED9E6200828701 /* SwipeTable */,
 				CFB24C0F19EB51A100470CE1 /* views */,
@@ -249,6 +251,8 @@
 				7590035319ECB6F60043A2F1 /* MarketTableViewController.m */,
 				758D2ED119EF393000F42C8E /* FirstViewController.h */,
 				758D2ED219EF393000F42C8E /* FirstViewController.m */,
+				758EDECA19F4D149009627D3 /* CompareViewController.h */,
+				758EDECB19F4D149009627D3 /* CompareViewController.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -333,13 +337,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75A1573219EDC37E00828701 /* clock@2x.png in Resources */,
+				758EDEC419F47EFD009627D3 /* comparar@2x.png in Resources */,
 				75A2EE7119E8BF82004DB5F3 /* Main.storyboard in Resources */,
-				758D2ED019EF376900F42C8E /* MarketList.db in Resources */,
 				75A2EE7619E8BF82004DB5F3 /* LaunchScreen.xib in Resources */,
 				75A2EE7319E8BF82004DB5F3 /* Images.xcassets in Resources */,
-				75A1573119EDC37E00828701 /* check@2x.png in Resources */,
-				75A1573319EDC37E00828701 /* cross@2x.png in Resources */,
+				758EDEC519F47EFD009627D3 /* editar@2x.png in Resources */,
+				758EDEC619F47EFD009627D3 /* eliminar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +366,7 @@
 				7590035419ECB6F60043A2F1 /* MarketTableViewController.m in Sources */,
 				CFB24C1B19EB52EA00470CE1 /* ListMarketTableViewController.m in Sources */,
 				CFB24C1519EB528400470CE1 /* CategoryTableViewController.m in Sources */,
+				758EDECC19F4D149009627D3 /* CompareViewController.m in Sources */,
 				75A2EE6B19E8BF82004DB5F3 /* AppDelegate.m in Sources */,
 				75A1572019ED9E8E00828701 /* SWTableViewCell.m in Sources */,
 				758D2ED319EF393000F42C8E /* FirstViewController.m in Sources */,

@@ -16,8 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    iniBD = [[Market alloc]init];
     
+    varAppDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    iniBD = [[Market alloc]init];
     [iniBD moveDataBaseAtLibrary];
 }
 
@@ -36,4 +38,16 @@
 }
 */
 
+- (IBAction)makeMarketListButton:(id)sender {
+    varAppDelegate.swEditMarketList = YES;
+}
+
+- (IBAction)viewMarketListButton:(id)sender {
+    varAppDelegate.swEditMarketList = NO;
+}
+
+- (IBAction)pruebaInsertButton:(id)sender {
+    
+    [iniBD loadMarketWithIdListMarket:varAppDelegate.idNewSuperMercado];
+}
 @end

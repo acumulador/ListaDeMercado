@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Market.h"
+#import "repoMarketProduct.h"
 #import "ListMarketTableViewController.h"
 #import "AppDelegate.h"
 
